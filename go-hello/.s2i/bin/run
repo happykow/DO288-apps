@@ -8,4 +8,5 @@
 #
 
 # Run the app
+echo "Staring with --lang es"
 exec /opt/app-root/app --lang es
