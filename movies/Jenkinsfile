@@ -93,6 +93,7 @@ pipeline {
 
         stage('Wait for deployment in DEV env') {
             //TODO: Watch deployment until pod is in 'Running' state
+ 	    steps {
                 sh "oc get route ${APP_NAME} -n ${DEV_PROJECT} -o jsonpath='{ .spec.host }' --loglevel=4 > routehost"
 
                 script {
@@ -109,8 +110,8 @@ pipeline {
 		   }
 		}
 
-        }
-
+            }
+	}
         stage('Promote to Staging Env') {
             steps {
                 timeout(time: 60, unit: 'MINUTES') {
