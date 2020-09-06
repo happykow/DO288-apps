@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MoviesController {
 
     private List<Movie> movies;
-    private String status = "READY";
+    private String status = "Ready";
 
     @GetMapping("/movies")
     public List<Movie> getAllMovies() {
